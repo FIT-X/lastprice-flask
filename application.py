@@ -21,15 +21,15 @@ from flask_cors import CORS
 
 
 
-hardcoremode = sys.argv[1]
+##hardcoremode = sys.argv[1]
 
 ##usage python haggleServer.py <hardcoremode>
 ##hardcoremode = 0|1
 
-if hardcoremode == '1':
-    import Pricing_Response2 as pr
-else:
-    import Pricing_Response as pr
+## if hardcoremode == '1':
+##    import Pricing_Response2 as pr
+## else:
+##    import Pricing_Response as pr
 
 app = Flask(__name__)
 CORS(app)
