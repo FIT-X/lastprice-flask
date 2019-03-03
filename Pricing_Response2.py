@@ -40,7 +40,7 @@ response = VoiceResponse()
 ##response.say(message, voice='alice')
 ##response.play('https://api.twilio.com/cowbell.mp3', loop=1)
 ##response.play(soundurl, loop=1)
-gather = Gather(input='speech dtmf', action = 'http://c76d1781.ngrok.io/initialCall', timeout=3, num_digits=1)
+gather = Gather(input='speech dtmf', action = 'http://woodle.ngrok.io/initialCall', timeout=3, num_digits=1)
 ##message = message + ' Please press 1 to exit or say ok to agree.'
 gather.say(message, voice = 'Polly.Kimberly')
 response.append(gather)
