@@ -61,6 +61,8 @@ def processSpeech(text):
 def dummy():
 
     ##res = request.json
+    
+    print ("now inside dummy call")
 
     js = "<html> <body>OK THIS WoRKS</body></html>"
 
