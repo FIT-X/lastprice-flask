@@ -29,7 +29,8 @@ from flask_cors import CORS
 ## if hardcoremode == '1':
 ##    import Pricing_Response2 as pr
 ## else:
-##    import Pricing_Response as pr
+
+import Pricing_Response as pr
 
 app = Flask(__name__)
 CORS(app)
