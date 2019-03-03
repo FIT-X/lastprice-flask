@@ -176,7 +176,7 @@ def dummyJson():
     ##response.say(message, voice='alice')
     ##response.play('https://api.twilio.com/cowbell.mp3', loop=1)
     ##response.play(soundurl, loop=1)
-    gather = Gather(input='speech dtmf', action = 'http://c76d1781.ngrok.io/dummyJson', timeout=3, num_digits=1)
+    gather = Gather(input='speech dtmf', action = 'https://haggler.azurewebsites.net/dummyJson', timeout=3, num_digits=1)
     message = speechResult + ' Please press 1 to exit or say ok to agree.'
     gather.say(message, voice = 'Polly.Kimberly')
     response.append(gather)
