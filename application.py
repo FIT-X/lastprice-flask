@@ -81,6 +81,7 @@ def setupcall():
     global nextBestHotel 
     global customerName
     global origPrice
+    global callState
 
     currPrice = float(request.args['currprice'])
     targetPrice = float(request.args['targetprice'])
@@ -88,6 +89,7 @@ def setupcall():
     nextBestHotel = request.args['nextbesthotel']
     customerName = request.args['customername']
     origPrice = float(request.args['currprice'])
+    callState = 0
 
     print (currPrice)
     print(targetPrice)
@@ -102,6 +104,47 @@ def setupcall():
     ##resp.headers['Link'] = 'http://google.com'
 
     return resp
+
+
+@app.route("/status", methods=['GET', 'POST'])
+def getstatus():
+
+
+    ##res = request.json
+
+    global currPrice 
+    global targetPrice
+    global nextBestPrice 
+    global nextBestHotel 
+    global customerName
+    global origPrice
+    global callState
+    
+    status = {}
+
+    if callState == 1:
+        status["calling"] = True
+    else:
+        status["calling"] = False
+
+    print (currPrice)
+    print(targetPrice)
+    print (nextBestPrice)
+    print (nextBestHotel)
+    print (customerName)
+
+    statusjson = json.dumps(str(status))
+
+    print(statusjson)
+
+    js = "<html> <body>OK THIS WoRKS</body></html>"
+
+    resp = Response(statusjson, status=200, mimetype='application/json')
+    ##resp.headers['Link'] = 'http://google.com'
+
+    return resp
+
+
 
 @app.route("/dummyJson", methods=['GET', 'POST'])
 def dummyJson():
@@ -276,6 +319,7 @@ def initialCall():
 
     global currPrice
     global origPrice
+    global callState
     
 ##    res = request.get_json()
 ##    print (res)
