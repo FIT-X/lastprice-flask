@@ -279,7 +279,7 @@ def propagate():
                 ##response.say(message, voice='alice')
                 ##response.play('https://api.twilio.com/cowbell.mp3', loop=1)
                 ##response.play(soundurl, loop=1)
-                gather = Gather(input='speech dtmf', action = 'http://c76d1781.ngrok.io/propagate', timeout=3, num_digits=1)
+                gather = Gather(input='speech dtmf', action = 'https://haggler.azurewebsites.net/propagate', timeout=3, num_digits=1)
                 ##message = speechResult + ' Please press 1 to exit or say ok, I agree to agree to the proposed price.'
                 gather.say(message, voice = 'Polly.Kimberly')
                 response.append(gather)
@@ -374,7 +374,7 @@ def initialCall():
             ##response.say(message, voice='alice')
             ##response.play('https://api.twilio.com/cowbell.mp3', loop=1)
             ##response.play(soundurl, loop=1)
-            gather = Gather(input='speech dtmf', action = 'http://c76d1781.ngrok.io/propagate', timeout=3, num_digits=1)
+            gather = Gather(input='speech dtmf', action = 'https://haggler.azurewebsites.net/propagate', timeout=3, num_digits=1)
             ##message = speechResult + ' Please press 1 to exit or say ok, I agree to agree to the proposed price.'
             gather.say(message, voice = 'Polly.Kimberly')
             response.append(gather)
